@@ -1,12 +1,9 @@
 package org.fasttrackit.onlineshopapi.transfer;
 
-import org.fasttrackit.onlineshopapi.domain.Product;
-import org.springframework.beans.BeanUtils;
-
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-public class UpdateProductRequest {
+public class CreateProductRequest {
 
     @NotNull
     private String name;
@@ -58,20 +55,5 @@ public class UpdateProductRequest {
                 ", price=" + price +
                 ", imagePath='" + imagePath + '\'' +
                 '}';
-    }
-
-    public Product updateProduyct(long id, UpdateProductRequest){
-        LOGGER.info("Updating product {} with {}", id, request);
-        Product product = getProduct(id);
-
-        BeanUtils.copyProperties(request, product);
-        return productRepository.save(product);
-    }
-
-    public void deleteProduct(long id){
-        LOGGER.info("Deleting product {}", id);
-        product.Repository.deteleById(id);
-        LOGGER.info("Detleting product {}", id);
-
     }
 }
