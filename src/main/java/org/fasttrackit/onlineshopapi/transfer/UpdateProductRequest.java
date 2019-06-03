@@ -60,18 +60,5 @@ public class UpdateProductRequest {
                 '}';
     }
 
-    public Product updateProduyct(long id, UpdateProductRequest){
-        LOGGER.info("Updating product {} with {}", id, request);
-        Product product = getProduct(id);
 
-        BeanUtils.copyProperties(request, product);
-        return productRepository.save(product);
-    }
-
-    public void deleteProduct(long id){
-        LOGGER.info("Deleting product {}", id);
-        product.Repository.deteleById(id);
-        LOGGER.info("Detleting product {}", id);
-
-    }
 }
